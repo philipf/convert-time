@@ -1,0 +1,20 @@
+{
+  "name": "roo-1",
+  "version": "1.0.0",
+  "description": "A static web application that converts various resource planning time formats into ResourceGuru's HH:MM format.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  }
+}

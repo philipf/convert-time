@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Planning Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Resource Planning Converter</h1>
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+            <p class="text-gray-600 mb-4">Convert resource planning inputs to ResourceGuru format</p>
+            <div id="converter-form" class="space-y-6">
+                <!-- Hours per Week Input -->
+                <div class="space-y-2">
+                    <label for="hoursPerWeek" class="block text-sm font-medium text-gray-700">Hours per Week</label>
+                    <input type="number" id="hoursPerWeek" name="hoursPerWeek"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                           placeholder="e.g. 40"
+                           aria-describedby="hoursPerWeekDesc hoursPerWeekError"
+                           min="0"
+                           max="168"
+                           step="0.01">
+                    <div id="hoursPerWeekDesc" class="text-sm text-gray-500">Enter weekly hours between 0 and 168</div>
+                    <p id="hoursPerWeekError" class="text-red-500 text-sm hidden" role="alert" aria-live="assertive">Please enter a valid number of hours</p>
+                </div>
+
+                <!-- Minutes per Week Input -->
+                <div class="space-y-2">
+                    <label for="minutesPerWeek" class="block text-sm font-medium text-gray-700">Minutes per Week</label>
+                    <input type="number" id="minutesPerWeek" name="minutesPerWeek"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                           placeholder="e.g. 2400"
+                           aria-describedby="minutesPerWeekDesc minutesPerWeekError"
+                           min="0"
+                           max="10080"
+                           step="0.01">
+                    <div id="minutesPerWeekDesc" class="text-sm text-gray-500">Enter weekly minutes between 0 and 10080</div>
+                    <p id="minutesPerWeekError" class="text-red-500 text-sm hidden" role="alert" aria-live="assertive">Please enter a valid number of minutes</p>
+                </div>
+
+                <!-- Hours per Day Input -->
+                <div class="space-y-2">
+                    <label for="hoursPerDay" class="block text-sm font-medium text-gray-700">Hours per Day</label>
+                    <input type="number" id="hoursPerDay" name="hoursPerDay" 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                           placeholder="e.g. 8">
+                    <p id="hoursPerDayError" class="text-red-500 text-sm hidden">Please enter a valid number of hours</p>
+                </div>
+
+                <!-- Minutes per Day Input -->
+                <div class="space-y-2">
+                    <label for="minutesPerDay" class="block text-sm font-medium text-gray-700">Minutes per Day</label>
+                    <input type="number" id="minutesPerDay" name="minutesPerDay" 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                           placeholder="e.g. 480">
+                    <p id="minutesPerDayError" class="text-red-500 text-sm hidden">Please enter a valid number of minutes</p>
+                </div>
+
+                <!-- Result Display -->
+                <div class="mt-8 p-4 bg-gray-50 rounded-md">
+                    <h2 class="text-lg font-medium text-gray-900 mb-2">Converted Result</h2>
+                    <div class="flex items-center justify-center" role="status" aria-live="polite">
+                        <span id="resultDisplay" class="text-2xl font-bold text-blue-600" aria-label="Converted time">HH:MM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
